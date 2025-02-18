@@ -32,18 +32,17 @@ A < B:
 
 Hardware Connections
 
-Signal	GPIO Pin	Connection
-A[1]	PD1	Push Button Input
-A[0]	PD2	Push Button Input
-B[1]	PD3	Push Button Input
-B[0]	PD4	Push Button Input
-A > B (G)	PC4	Green LED Output
-A == B (E)	PC5	Yellow LED Output
-A < B (S)	PC6	Red LED Output
-VCC	3.3V	Power Supply
-GND	GND	Ground
-Alt text
-
+Signal	   GPIO Pin	         Connection
+A[1]	     PD1	         Push Button Input
+A[0]	     PD2             Push Button Input
+B[1]	     PD3             Push Button Input
+B[0]	     PD4	         Push Button Input
+A > B (G)	 PC4	         Green LED Output
+A == B (E)	 PC5	         Yellow LED Output
+A < B (S)	 PC6	         Red LED Output
+VCC	         3.3V	         Power Supply
+GND	         GND	         Ground
+https://github.com/vivek2004-vk/samsung-riscv/blob/main/Task5/snapshots/vsd1.png
 2-Bit Comparator Truth Table
 
 A1	A0	B1	B0	A > B	A == B	A < B
