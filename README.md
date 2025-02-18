@@ -362,18 +362,19 @@ Description: This task involves implementing an Ultrasonic Obstacle Detection Ci
 
 Objectives:
 
-Implement an Ultrasonic Obstacle Detection Circuit on the VSD_Squadron-MINI.
-Use the HC-SR04 ultrasonic sensor to measure distances.
-Process sensor data and trigger an active buzzer based on obstacle proximity.
-Ensure real-time distance detection and alert functionality.
+- Implement an Ultrasonic Obstacle Detection Circuit on the VSD_Squadron-MINI.
+- Use the HC-SR04 ultrasonic sensor to measure distances.
+- Process sensor data and trigger an active buzzer based on obstacle proximity.
+- Ensure real-time distance detection and alert functionality.
+
 Steps:
 
-Circuit Setup – Connect HC-SR04 for distance measurement and buzzer for alerts.
-GPIO Configuration – Initialize and configure GPIO pins for sensor input and buzzer output.
-Distance Measurement Logic – Implement obstacle detection using time-of-flight calculations.
-Buzzer Activation – Trigger the buzzer when an obstacle is within 50 cm.
-Testing & Verification – Validate system functionality with real-world obstacles.
-Documentation to Repository – Upload circuit schematics, firmware code, and results to GitHub.
+1.Circuit Setup – Connect HC-SR04 for distance measurement and buzzer for alerts.
+2.GPIO Configuration – Initialize and configure GPIO pins for sensor input and buzzer output.
+3.Distance Measurement Logic – Implement obstacle detection using time-of-flight calculations.
+4.Buzzer Activation – Trigger the buzzer when an obstacle is within 50 cm.
+5.Testing & Verification – Validate system functionality with real-world obstacles.
+6.Documentation to Repository – Upload circuit schematics, firmware code, and results to GitHub.
 
 
 
