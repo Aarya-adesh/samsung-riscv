@@ -1,206 +1,360 @@
-Samsung RISC-V Program
+# samsung-riscv
+# samsung-riscv
+The program is based on the RISC-V architecture and uses open-source tools to teach people about VLSI chip design and RISC-V. The instructor for this internship is Kunal Ghosh Sir.
 
-RISC-V Talent Development Program, powered by Samsung Semiconductor India Research (SSIR) in collaboration with VLSI System Design (VSD).
+# Basic Details
 
-Basic Details
+Name: AARYAADESH
 
-Name: aaryaadesh College: Vidyavardhaka College of Engineering
-Email: rajuaarya30@gmail.com
+College: Vidyavardhaka College of Engineering
 
-Task 1: RISC-V Toolchain Installation
+Email ID: rajuaarya30@gmail.com
 
-Installation of RISC-V toolchain using the VDI link provided.
-The program demonstrates basic operations in C and their equivalent implementation in RISC-V assembly language.
-Task 2: Spike simulation and compiling c prigramming using RISC-V GCC
+GitHub Profile: Aarya-adesh
 
-Spike (RISC-V Instruction Set Architecture Simulator) Spike is an emulator for the RISC-V ISA, often used to simulate and test RISC-V programs. It mimics the behavior of a RISC-V processor, allowing programs to run in a virtualized and controlled environment for development and debugging purposes. -d Option (Debug Mode) The -d option in Spike activates debug mode. This mode facilitates detailed program execution by enabling step-by-step inspection of the processor's state, including registers and memory, to help diagnose and resolve issues. Proxy Kernel (pk) The proxy kernel (pk) functions as a lightweight operating system within the RISC-V simulation. It manages system calls and supports the execution of programs in the simulated environment provided by Spike. RISC-V Assembly Commands addi sp, sp, -16 (Add Immediate): This command subtracts 16 from the current value of the stack pointer (sp), effectively adjusting the stack pointer downwards. lui a0, 0x21 (Load Upper Immediate): This instruction loads the immediate value 0x31, shifted left by 12 bits, into the upper part of register a2. task 2 11 - Copy task 2 11 Program for printing numbers till n task 2 77 compiling the program task 2 55 task 2 44
+LinkedIN Profile: Aarya adesh
 
-using -Ofast task 2 22
+Task 1: Task is to refer to C based and RISCV based lab videos and execute the task of compiling the C code using gcc and riscv compiler
 
-Task 3: Understanding RISC-V and Its Instruction Formats
+# C Language based LAB
+# C and RISC-V Based Labs
 
-RISC-V Instruction Analysis
+This repository demonstrates the processes involved in compiling C programs and generating assembly code using both a standard GCC compiler and a RISC-V GCC compiler. It includes comprehensive steps and explanations to guide users through each stage of the compilation and debugging workflow.
 
-what is RISK-V RISC-V is an open-source Instruction Set Architecture (ISA) rooted in RISC principles, designed to optimize processors for specific applications. As the fifth generation of RISC-based ISAs, RISC-V offers a flexible, free alternative to proprietary processor technologies. With its open and license-free nature, RISC-V empowers developers to create customized processors without the burden of licensing fees. RISC-V’s open-source model fosters innovation and broadens the hardware development ecosystem, making it a compelling choice for modern processor design.
+## C Language-Based Lab
 
-RISC-V Instruction Formats
+### Steps to Compile a .c File on Your Machine:
 
-This document outlines the six primary instruction formats in the RISC-V architecture: R-format, I-format, S-format, B-format, U-format, and J-format. Each format serves a specific purpose and is structured to handle particular types of operations efficiently.
+1.⁠ ⁠Open the bash terminal and navigate to the directory where you want to create your file.
+2.⁠ ⁠Use the following command to create and edit a new .c file:
+   ```sh
+   gedit sum_1ton.c
 
-1. R-format (Register-Register Operations)
 
-Purpose: Used for instructions that perform arithmetic and logical operations between two registers.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-rd	5	Destination register
-funct3	3	Operation subtype
-rs1	5	Source register 1
-rs2	5	Source register 2
-funct7	7	Further specifies the operation
-2. I-format (Immediate Operations)
+### Steps to Compile a .c File on Your Machine:
+ sh
+ gcc sum_1ton.c
+ ./a.out
+ # Compilation and execution complete.
+ 
 
-Purpose: Used for operations involving immediate values, such as arithmetic with constants or load instructions.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-rd	5	Destination register
-funct3	3	Operation subtype
-rs1	5	Source register
-imm	12	Immediate value
-3. S-format (Store Operations)
 
-Purpose: Used for storing data from a register to memory.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-imm[4:0]	5	Immediate value (low bits)
-funct3	3	Operation subtype
-rs1	5	Base address register
-rs2	5	Source register
-imm[11:5]	7	Immediate value (high bits)
-4. B-format (Branch Operations)
+### Steps to Compile Using RISC-V GCC Compiler:
+1.⁠ ⁠Ensure the RISC-V GCC compiler is installed and accessible on your system.
+2.⁠ ⁠Verify the .c file contents using the cat command:
+ sh
+cat sum_1ton.c
 
-Purpose: Used for conditional branch instructions, enabling flow control in the program.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-imm[11]	1	Immediate value (bit 11)
-imm[4:1]	4	Immediate value (bits 4:1)
-funct3	3	Condition subtype
-rs1	5	Source register 1
-rs2	5	Source register 2
-imm[10:5]	6	Immediate value (bits 10:5)
-imm[12]	1	Immediate value (bit 12)
-5. U-format (Upper Immediate Operations)
+3.⁠ ⁠Compile the C program for RISC-V architecture using:
+ sh
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1ton.o sum_1ton.c
 
-Purpose: Used for instructions that load a 20-bit immediate value into the upper bits of a register.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-rd	5	Destination register
-imm	20	Immediate value
-6. J-format (Jump Operations)
+4.⁠ ⁠Disassemble the object file to view its assembly code using:
+ sh
+riscv64-unknown-elf-objdump -d sum_1ton.o
 
-Purpose: Used for jump instructions, allowing for control flow changes over a large range.
-Fields:
-Field	Bits	Description
-opcode	7	Specifies the operation
-rd	5	Destination register
-imm[19:12]	8	Immediate value (bits 19:12)
-imm[11]	1	Immediate value (bit 11)
-imm[10:1]	10	Immediate value (bits 10:1)
-imm[20]	1	Immediate value (bit 20)
-Summary
+5.⁠ ⁠Use /main in the terminal to locate the main function in the assembly output.
 
-Each format in the RISC-V ISA is designed to optimize specific types of operations while maintaining simplicity and efficiency in decoding. Understanding these formats is essential for working with RISC-V assembly and machine code.
+### Explanation of Key Commands and Options: 
+1.⁠ ⁠-mabi=lp64: Specifies the Application Binary Interface (ABI) for 64-bit integers, pointers, and long data types, suitable for 64-bit RISC-V architecture.
 
-This document provides a detailed breakdown of 15 unique RISC-V instructions extracted from an object file. Each instruction is described in terms of its format, opcode, machine code, and binary representation. task 3
+2.⁠ ⁠-march=rv64i: Indicates the 64-bit RISC-V base integer instruction set architecture.
 
-Instruction	Format	Opcode	Machine Code	Binary Representation
-lui	U-type	0110111	00021537	00000000001000010101000011010011
-addi	I-type	0010011	ff010113	11111111000000010000000100010011
-li	Pseudo	0010011	00600613	00000000011000000000011000010011
-sd	S-type	0100011	00113423	00000001000100010011010000100011
-jal	J-type	1101111	340000ef	00110100000000000000000011101111
-ld	I-type	0000011	00813083	00001000000000010011000010000011
-ret	I-type	1100111	00008067	00000000000000001000000001100111
-auipc	U-type	0010111	ffff0797	11111111111111110000011110010111
-beqz	B-type	1100011	00078863	00000000000001111000100001100011
-sub	R-type	0110011	40a60633	01000000101001100000011000110011
-jalr	I-type	1100111	1d4000ef	00011101010000000000000011101111
-lw	I-type	0000011	00012503	00000000000000010010010100000011
-j	J-type	1101111	0c00006f	00001100000000000000000001101111
-memset	Pseudo	NA	10460613	00010000010001100000011000010011
-exit	Pseudo	NA	08c0006f	00001000110000000000000001101111
-Explanation of the Columns:
+3.⁠ ⁠-O1: Enables basic optimization for better performance without significantly increasing compilation time.
 
-Instruction: The name of the RISC-V instruction.
-Format: The instruction format type (U-type, I-type, S-type, etc.).
-Opcode: The opcode of the instruction, which specifies the operation.
-Machine Code: The 32-bit hexadecimal representation of the instruction as it appears in the object file.
-Binary Representation: The equivalent binary representation of the machine code.
-This table is helpful for understanding the structure of RISC-V instructions and how they translate into machine-readable formats.
+4.⁠ ⁠riscv64-unknown-elf-objdump: A tool for disassembling RISC-V binaries to examine the code structure and debug it effectively.Task 2:
+Debugging with SPIKE: Comparing -O1 and -Ofast Optimizations
 
-Task 4: Function simulation of RISC-V core
+-O1: A moderate optimization for balanced performance.
 
-This guide provides steps to perform a functional simulation of the given RISC-V Core Verilog netlist and testbench, along with details about the differences between Standard RISC-V ISA and Hardcoded ISA.
+-Ofast: A high-speed optimization that prioritizes performance over strict standards
 
-Steps to Perform Functional Simulation
+add.c File
+![sum code][
+](https://private-user-images.githubusercontent.com/193921396/402564669-5360708a-ec12-4978-b9fe-86b6e5da6890.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkyNjEyNzcsIm5iZiI6MTczOTI2MDk3NywicGF0aCI6Ii8xOTM5MjEzOTYvNDAyNTY0NjY5LTUzNjA3MDhhLWVjMTItNDk3OC1iOWZlLTg2YjZlNWRhNjg5MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMVQwODAyNTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02Yjc3NzliOGFlMGY3M2IwZjQyMGJmMTBlNDNhYWIzYWU4NjA2YjE1ZjM4ZTBhZDM0ZDA2YmZkYWQzZjBmZDA3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.qCWrPDdqCtrZQuFTm3DCfRxaw7mV0mfD25UzaHWF7D8)![Uploading image.png…]()
+Commands:
 
-1. Install Required Tools
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum.o sum.c
 
-In Ubuntu, open the terminal and enter the following commands to install iverilog and GTKWave:
+![Debugging O1](![IMG-20250113-WA0002](https://github.com/user-attachments/assets/aca28883-689b-4840-b03f-ca9c735e1004)
 
-$ sudo apt-get update
-$ sudo apt-get install iverilog gtkwave
-2. Clone the Repository
+![Debugging Ofast](![IMG-20250113-WA0003](https://github.com/user-attachments/assets/2b7272bb-9d60-42f9-b8eb-3231df155944)
 
-To clone the repository and download the netlist files for simulation, use these commands in your terminal:
 
+Running on SPIKE
+
+Commands:
+
+spike pk sum.o
+spike -d pk sum.o
+
+
+Objdump:
+
+riscv64-unknown-elf-objdump -d sum.o
+
+![Objdump -O1](![IMG-20250113-WA0005](https://github.com/user-attachments/assets/1e44253f-6b25-421a-9a42-d1958a727955)
+
+![Objdump -Ofast](![IMG-20250113-WA0004](https://github.com/user-attachments/assets/48f3a98c-031d-4a1c-9bce-fa4a3693346d)
+Task 2:Task is to refer to C based and RISCV based lab videos and execute the task of compiling the C code using gcc and riscv compiler simulator
+
+Debugging with SPIKE: Comparing -O1 and -Ofast Optimizations
+
+-O1: A moderate optimization for balanced performance.
+
+-Ofast: A high-speed optimization that prioritizes performance over strict standards
+![image](https://github.com/user-attachments/assets/c3e77cd0-b1d1-445a-b60b-e1164bb41419)
+
+
+add.c File sum code
+
+Commands:
+
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum.o sum.c
+![image](https://github.com/user-attachments/assets/7e53f7d1-ce42-4898-8fe1-fa3f66e0ec6a)
+![image](https://github.com/user-attachments/assets/dfbbef97-d375-4cdd-bc0c-20dbef6b9ccc)
+
+
+Debugging O1
+
+Debugging Ofast
+
+Running on SPIKE
+
+Commands:
+
+spike pk sum.o
+To open Interactive Debugging
+
+spike -d pk sum.o
+Objdump:
+
+riscv64-unknown-elf-objdump -d sum.o
+riscv64-unknown-elf-objdump -d sum.o | less
+Objdump -O1
+
+Objdump -Ofast
+![image](https://github.com/user-attachments/assets/f9f98422-d523-46f2-833c-d358c9b25ba0)
+![image](https://github.com/user-attachments/assets/7fa06632-87ec-448c-99d5-20b39384a024)
+
+Task 3: The task is to determine the instruction type for each of the provided instructions and provide their corresponding 32-bit instruction codes in the appropriate format
+Understanding RISC-V and Its Instruction Formats
+What is RISC-V?
+RISC-V is an open-source Instruction Set Architecture (ISA) that enables developers to design processors tailored to specific applications. Based on Reduced Instruction Set Computer (RISC) principles, RISC-V represents the fifth generation of processors built on this concept. Its open and free nature means developers can utilize RISC-V without purchasing licenses, making it a compelling alternative to proprietary processor technologies.
+
+Instruction Formats in RISC-V
+The instruction format of a processor defines how machine language instructions are structured for execution. These instructions are composed of binary data (0s and 1s), each segment providing details about data location and operations to be performed. In RISC-V, there are six primary instruction formats:
+
+R-format
+I-format
+S-format
+B-format
+U-format
+J-format
+instructions_types
+1.⁠ ⁠R-type Instruction
+R-type (Register-type) instructions operate on registers rather than memory locations. These are used for arithmetic and logical operations. Each instruction is 32 bits and divided into six fields:
+![image](https://github.com/user-attachments/assets/71caa4e5-fb47-442d-aa46-62fed3a145e7)
+
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rd	5 bits	Destination register
+func3	3 bits	Specifies the type of operation
+rs1	5 bits	First source register
+rs2	5 bits	Second source register
+func7	7 bits	Additional operation specification
+Example: ADD r9, r2, r5
+Operation: Adds values in registers r2 and r5, storing the result in r9.
+
+Field Breakdown:
+
+Opcode: 0110011
+rd (Destination): r9 -> 01001
+rs1 (Source 1): r2 -> 00010
+rs2 (Source 2): r5 -> 00101
+func3: 000
+func7: 0000000
+32-bit Instruction: 0000000_00101_00010_000_01001_0110011
+
+Example: XOR r10, r1, r4
+Operation: XOR operation between r1 and r4, result in r10.
+
+Field Breakdown:
+
+Opcode: 0110011
+rd (Destination): r10 -> 01010
+rs1 (Source 1): r1 -> 00001
+rs2 (Source 2): r4 -> 00100
+func3: 100
+func7: 0000000
+32-bit Instruction: 0000000_00100_00001_100_01010_0110011
+![image](https://github.com/user-attachments/assets/15b908fe-ecec-4bfd-b04e-922c42fea7e0)
+
+
+Example: SLT r11, r2, r4
+Operation: Sets r11 to 1 if r2 < r4; otherwise, sets r11 to 0.
+
+Field Breakdown:
+
+Opcode: 0110011
+rd (Destination): r11 -> 01011
+rs1 (Source 1): r2 -> 00010
+rs2 (Source 2): r4 -> 00100
+func3: 010
+func7: 0000000
+32-bit Instruction: 0000000_00100_00010_010_01011_0110011
+![image](https://github.com/user-attachments/assets/3f44f578-397b-4f79-9bb3-4b1bf88c29f7)
+
+
+r type
+
+2.⁠ ⁠I-type Instruction
+I-type (Immediate-type) instructions use a register and an immediate (constant) value. These are typically used for load and immediate operations.
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rd	5 bits	Destination register
+func3	3 bits	Specifies the type of operation
+rs1	5 bits	Source register
+imm[11:0]	12 bits	Immediate value
+Example: ADDI r12, r4, 5
+Operation: Adds immediate value 5 to the value in r4 and stores it in r12.
+Field Breakdown:
+Opcode: 0010011
+rd (Destination): r12 -> 01100
+rs1 (Source): r4 -> 00100
+imm[11:0] (Immediate): 000000000101
+func3: 000
+32-bit Instruction: 000000000101_00100_000_01100_0010011
+![image](https://github.com/user-attachments/assets/34310bef-f5b4-4859-859f-23b6f6e8e64d)
+
+i type
+
+3.⁠ ⁠S-type Instruction
+S-type (Store-type) instructions store register values into memory locations.
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rs1	5 bits	Base address register
+rs2	5 bits	Source register
+imm[11:5]	7 bits	Upper immediate value
+imm[4:0]	5 bits	Lower immediate value
+func3	3 bits	Specifies the type of operation
+Example: SW r3, 2(r1)
+Operation: Stores the value in r3 into the memory at the address r1 + 2.
+Field Breakdown:
+Opcode: 0100011
+rs1 (Base Address): r1 -> 00001
+rs2 (Source): r3 -> 00011
+imm[11:5] (Upper Immediate): 0000000
+imm[4:0] (Lower Immediate): 00010
+func3: 010
+32-bit Instruction: 0000000_00011_00001_010_00010_0100011
+s type
+
+4.⁠ ⁠B-type Instruction
+B-type (Branch-type) instructions handle branching based on conditions.
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rs1	5 bits	Source register 1
+rs2	5 bits	Source register 2
+imm[12	10:5	4:1
+func3	3 bits	Specifies the condition for branching
+Example: BNE r0, r1, 20
+Operation: Branches to the address PC + 20 if r0 is not equal to r1.
+Field Breakdown:
+Opcode: 1100011
+rs1: r0 -> 00000
+rs2: r1 -> 00001
+imm[12|10:5|4:1|11]: 0000010100
+func3: 001
+32-bit Instruction: 0000000_00001_00000_001_10100_1100011
+Example: BEQ r0, r0, 15
+Operation: Branches to the address PC + 15 if r0 equals r0 (always true).
+Field Breakdown:
+Opcode: 1100011
+rs1: r0 -> 00000
+rs2: r0 -> 00000
+imm[12|10:5|4:1|11]: 000001111
+func3: 000
+32-bit Instruction: 0000000_00000_00000_000_01111_1100011
+![image](https://github.com/user-attachments/assets/0469b77b-8db8-4c6d-a826-6ec6be886baf)
+
+b type
+
+5.⁠ ⁠U-type Instruction
+U-type (Upper Immediate) instructions load immediate data into the destination register.
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rd	5 bits	Destination register
+imm[31:12]	20 bits	Upper immediate value
+![image](https://github.com/user-attachments/assets/c75d14b1-ea00-4750-a628-3144494c8245)
+
+u type
+
+6.⁠ ⁠J-type Instruction
+J-type (Jump-type) instructions implement jump operations, often used for loops.
+
+Structure:
+Field Name	Size	Description
+Opcode	7 bits	Determines the instruction type
+rd	5 bits	Destination register
+imm[20	10:1	11
+![image](https://github.com/user-attachments/assets/04360682-d767-4ac0-8948-3feaf08cba1b)
+
+j type
+
+This repository contains a list of 15 unique RISC-V instructions extracted from the assembly code along with their corresponding 32-bit instruction codes. These instructions cover different instruction formats, such as U-type, I-type, J-type, B-type, and R-type.
+
+
+
+ TASK 4, you will simulate the RISC-V Core using the provided Verilog netlist and testbench. This involves setting up a simulation environment with tools like Icarus Verilog and GTKWave. You will run the simulation to verify the core's functional correctness, analyze the output signals, and capture waveform snapshots of executed instructions. These snapshots, along with a brief description explaining your understanding of RISC-V functional simulation and verification, should be uploaded to your GitHub repository.
+ 4. FUNCTIONAL SIMULATION
+
+4.1 About iverilog and gtkwave
+
+Icarus Verilog is an implementation of the Verilog hardware description language.
+GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
+4.2 Installing iverilog and gtkwave
+For Ubuntu
+Open your terminal and type the following to install iverilog and GTKWave
+
+$   sudo apt get update
+$   sudo apt get install iverilog gtkwave
+To clone the repository and download the netlist files for simulation , enter the following commands in your terminal.
 $ git clone https://github.com/vinayrayapati/iiitb_rv32i
 $ cd iiitb_rv32i
-3. Create Files
-
-Create two files:
-
-Verilog file
-Testbench file
-4. Add Code to Files
-
-Copy the code from the reference GitHub repository and paste it into your Verilog file and testbench file:
-
-Verilog file: iiitb_rv32i.v
-Testbench file: iiitb_rv32i_tb.v
-5. Run and Simulate the Verilog Code
-
-Use the following commands to compile and simulate the Verilog code:
-
+To simulate and run the verilog code , enter the following commands in your terminal.
 $ iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
 $ ./iiitb_rv32i
-6. View the Simulation Waveform
-
-To see the simulation waveform in GTKWave, enter the following command:
-
+To see the output waveform in gtkwave, enter the following commands in your terminal.
 $ gtkwave iiitb_rv32i.vcd
-Differences Between Standard RISC-V ISA and Hardcoded ISA
 
-Operation	Standard RISC-V ISA	Hardcoded ISA
-ADD R6, R2, R1	32'h00110333	32'h02208300
-SUB R7, R1, R2	32'h402083b3	32'h02209380
-AND R8, R1, R3	32'h0030f433	32'h0230a400
-OR R9, R2, R5	32'h005164b3	32'h02513480
-XOR R10, R1, R4	32'h0040c533	32'h0240c500
-SLT R1, R2, R4	32'h0045a0b3	32'h02415580
-ADDI R12, R4, 5	32'h004120b3	32'h00520600
-BEQ R0, R0, 15	32'h00000f63	32'h00f00002
-SW R3, R1, 2	32'h0030a123	32'h00209181
-LW R13, R1, 2	32'h0020a683	32'h00208681
-SRL R16, R14, R2	32'h0030a123	32'h00271803
-SLL R15, R1, R2	32'h002097b3	32'h00208783
-Analyzing the Output Waveform
+4.3 The output waveform
 
-The following instructions and their corresponding operations can be analyzed in the simulation waveform:
+The output waveform showing the instructions performed in a 5-stage pipelined architecture.
 
-Instruction 1: ADD R6, R2, R1 add
+Instruction 1:add r6,r2,r1
+![image](https://github.com/user-attachments/assets/ac24b1a8-e165-42d0-98ec-6a933750b2c2)
+![image](https://github.com/user-attachments/assets/09bfa323-4da0-48db-9e25-826af77e9da1)
+![image](https://github.com/user-attachments/assets/07719e5c-86c1-4bae-9ea5-0f7303031716)
+![image](https://github.com/user-attachments/assets/908528b4-9f0f-4268-a76d-2bf8a9e4a92b)
+![image](https://github.com/user-attachments/assets/bd86bce4-2212-404a-80d6-ca892ca037c7)
+![image](https://github.com/user-attachments/assets/a00a4ad2-6bbc-4f2f-9fc5-63cfc860c7e7)
+![image](https://github.com/user-attachments/assets/ca92aab9-6da0-45dd-ad41-c4530e5b1718)
+![image](https://github.com/user-attachments/assets/86102da8-8347-4e89-8d58-78c541cfad11)
+![image](https://github.com/user-attachments/assets/6c4d4856-d1a9-43fd-b767-2d28cfdbe87b)
 
-Instruction 2: AND R8, R1, R3 and
-
-Instruction 3: OR R9, R2, R5 OR
-
-Instruction 4: XOR R10, R1, R4 XOR
-
-Instruction 5: SLT R1, R2, R4 SLT `
-
-Instruction 6: ADDI R12, R4, 5 addi
-
-Instruction 7: BEQ R0, R0, 15 BEQ
-
-Instruction 8: BNE R0, R1, 20 BEN
-
-Instruction 9: SLL R15, R1, R2 SLL
-
-Instruction 10: SUB R7, R1, R2 SUB
 
 Task-5: Smart Motion Detection Alarm
 
@@ -359,7 +513,7 @@ int main(void)
     }
 }
 
-void TIM1_CC_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+void TIM1_CC_IRQHandler(void) _attribute_((interrupt("WCH-Interrupt-fast")));
 
 void TIM1_CC_IRQHandler(void)
 {
