@@ -1,13 +1,12 @@
 
-# Samsung RISC-V Program  
-
-**RISC-V Talent Development Program**, powered by **Samsung Semiconductor India Research (SSIR)** in collaboration with **VLSI System Design (VSD)**.  
-
-## Basic Details  
-Name: aaryaadesh
-College: Vidyavardhaka College of Engineering  
-Email: rajuaarya30@gmail.com  
-
+# Samsung-RISCV
+This course teaches users about VLSI chip design and RISC-V using open-source tools and is based on the RISC-V architecture. Kunal Ghosh Sir is the workshop's instructor.
+## Profile Details:
+##### Name: Aaryaadesh
+##### College: Vidyavardhaka College of Engineering
+##### Email: rajuaarya30@gmail.com
+##### GitHub Profile: Aarya-adesh
+##### LinkedIN: Aarya Adesh
 
 <details>
 <summary><b>Task 1:</b>Lab Snapshots: Assembly and C Programming Debugging</summary>   
