@@ -14,7 +14,6 @@ GitHub Profile: Aarya-adesh
 
 LinkedIN Profile: Aarya adesh
 
-Task 1: RISC-V Toolchain Installation
-
-Installation of RISC-V toolchain using the VDI link provided.
-The program demonstrates basic operations in C and their equivalent implementation in RISC-V assembly language.
+## Task 1: RISC-V Toolchain Installation 
+- Installation of RISC-V toolchain using the VDI link provided.
+- The program demonstrates basic operations in C and their equivalent implementation in RISC-V assembly language.
