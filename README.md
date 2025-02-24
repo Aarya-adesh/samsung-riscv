@@ -17,7 +17,7 @@ Spike (RISC-V Instruction Set Architecture Simulator) Spike is an emulator for t
 -d Option (Debug Mode) The -d option in Spike activates debug mode. This mode facilitates detailed program execution by enabling step-by-step inspection of the processor's state, including registers and memory, to help diagnose and resolve issues.
 Proxy Kernel (pk) The proxy kernel (pk) functions as a lightweight operating system within the RISC-V simulation. It manages system calls and supports the execution of programs in the simulated environment provided by Spike.
 RISC-V Assembly Commands addi sp, sp, -16 (Add Immediate): This command subtracts 16 from the current value of the stack pointer (sp), effectively adjusting the stack pointer downwards. lui a0, 0x21 (Load Upper Immediate): This instruction loads the immediate value 0x31, shifted left by 12 bits, into the upper part of register a2.
-![task 2 11 - Copy](https://github.com/your-username/your-repo/blob/main/image.png)
+![task 2 11 - Copy](https://github.com/user-attachments/assets/5720d23d-d326-42ec-8d21-1b737dc09ae1)
 ![task 2 11](https://github.com/user-attachments/assets/df38dd18-8c0a-491a-a16a-9e4c66cffe90)
 Program for printing numbers till n
 ![task 2 77](https://github.com/user-attachments/assets/d53c9fb3-fb96-4874-871b-0544633ed5ca)
