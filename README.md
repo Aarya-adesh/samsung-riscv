@@ -375,6 +375,10 @@ The below waveform was generated
 
 <details></details>
 
+<details>
+<summary><b>Task 5:</b>Smart Motion Detection Alarm</summary>   
+<br>
+
 # Task-5: Smart Motion Detection Alarm
 
 A compact and easy-to-install motion detection alarm using an ultrasonic radar sensor to detect trespassing and alert via a passive buzzer.
@@ -415,6 +419,12 @@ A compact and easy-to-install motion detection alarm using an ultrasonic radar s
 ![fp2](https://github.com/user-attachments/assets/8944bf73-4663-4400-8562-2a12e17c098a)
 ![fp](https://github.com/user-attachments/assets/64aefc48-cc2a-49c7-945d-b832dbdf85f8)
 
+<details>
+   </details>
+
+<details>
+<summary><b>Task 6:</b>Motion Detection System/summary>   
+<br>
 
 # Task-6: Motion Detection System.
 
@@ -556,3 +566,6 @@ void TIM1_CC_IRQHandler(void)
 
     TIM_ClearITPendingBit(TIM1, TIM_IT_CC1 | TIM_IT_CC2);
 }
+
+
+
