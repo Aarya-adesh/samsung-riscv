@@ -373,15 +373,7 @@ The below waveform was generated
 
 
 
-
-
-
-
-
-
-<details>
-<summary><b>Task 1:</b>smart detection alarm</summary>   
-<br>
+<details></details>
 
 # Task-5: Smart Motion Detection Alarm
 
@@ -423,9 +415,7 @@ A compact and easy-to-install motion detection alarm using an ultrasonic radar s
 ![fp2](https://github.com/user-attachments/assets/8944bf73-4663-4400-8562-2a12e17c098a)
 ![fp](https://github.com/user-attachments/assets/64aefc48-cc2a-49c7-945d-b832dbdf85f8)
 
-<details>
-<summary><b>Task 1:</b>Motion Detection System</summary>   
-<br> 
+
 # Task-6: Motion Detection System.
 
 ## Code
